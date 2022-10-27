@@ -16,7 +16,7 @@ public class Methods {
 	public static double distanceBetween(double x1, double y1, double x2, double y2) {
 		double distance = 0;
 		// FIXME: Hint use Math methods (e.g. Math.sqrt) to compute the distance
-		
+		distance = Math.sqrt(((x2-x1)*(x2-x1))+((y2-y1)*(y2-y1)));
 		return distance;
 	}
 
@@ -30,6 +30,14 @@ public class Methods {
 	public static void drawBullsEye(double x, double y, double radius) {
 		StdDraw.setPenColor(StdDraw.BLACK);
 		StdDraw.filledCircle(x, y, radius);
+		StdDraw.setPenColor(0, 109, 219);
+		StdDraw.filledCircle(x, y, .75*radius);
+		StdDraw.setPenColor(146, 0, 0);
+		StdDraw.filledCircle(x, y, .5*radius);
+		StdDraw.setPenColor(255, 255, 109);
+		StdDraw.filledCircle(x, y, .25*radius);
+		
+		
 
 		// TODO: Draw the remaining rings of the bull's eye
 		// Blue ring with 3.0/4.0 the radius
@@ -61,9 +69,36 @@ public class Methods {
 	 */
 	public static String substituteAll(String source, char target, String replacement) {
 		String result = "";
+		//char[] character = source.toCharArray();
+		//char[] replacementChar = source.toCharArray();
+//		for (int x = 0; x<replacement.length(); x++) {
+//			replacementChar[x] = replacement.charAt(x);
+//		}
+//		for (int i=0; i<source.length(); i++) {
+//			if (source.charAt(i)== target) {
+//				character[i] = replacementChar[i];
+//			}
+//			else {
+//				result = source
+//			}
+		for (int i = 0; i<source.length(); i++) {
+			if (source.charAt(i) == target) {
+				result = result + replacement;
+			}
+			else {
+				result = result + source.charAt(i);
+			}
+		}
+		
+		
 		// TODO: Finish this method
 		
 		return result;
+	}
+
+	private static void toCharArray() {
+		// TODO Auto-generated method stub
+		
 	}
 
 	/**
